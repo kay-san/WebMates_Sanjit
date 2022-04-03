@@ -1,0 +1,42 @@
+.chat{
+    background-color: rgb(208, 214, 214);
+    width: 90vh;
+    height: 500vh;
+    
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.chat_header{
+    margin: 10px;
+    border-bottom: 1px solid black;
+}
+
+.chat_avatar{
+    background-color: rgb(63, 184, 143);
+    margin: 10px;
+    
+    box-shadow: 2px 2px #888888;
+}
+/* .chat_avatar2{
+    background-color: rgb(63, 114, 158);
+    margin: 10px;
+}
+.chat_avatar3{
+    background-color: rgb(90, 184, 118);
+    margin: 10px;
+}
+.chat_avatar4{
+    background-color: rgb(122, 133, 62);
+    margin: 10px;
+}
+.chat_avatar5{
+    background-color: rgb(160, 77, 139);
+    margin: 10px;
+} */
+
+.chat_user{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+}
