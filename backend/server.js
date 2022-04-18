@@ -1,9 +1,20 @@
-const app = require('./app')
+const express = require('express');
 
-const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 
-dotenv.config({path: 'backend/config/config.env'})
+require('dotenv').config();
+const app = express();
+const port = process.env.PORT || 5000;
+app.use(express.json());
 
-app.listen(process.env.PORT, () => {
-    console.log(`server is running on PORT: ${process.env.PORT} in ${process.env.NODE_ENV} mode.`)
-})
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri);
+const connection = mongoose.connection;
+connection.once('open', () => {
+  console.log("MongoDB database connection established successfully");
+});
+
+
+app.listen(port, () => {
+    console.log(`Server is running on port: ${port}`);
+});
