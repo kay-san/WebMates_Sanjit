@@ -1,20 +1,23 @@
 const express = require('express');
-
 const mongoose = require('mongoose');
-
 require('dotenv').config();
+
 const app = express();
-const port = process.env.PORT || 5000;
 app.use(express.json());
 
-const uri = process.env.ATLAS_URI;
-mongoose.connect(uri);
-const connection = mongoose.connection;
-connection.once('open', () => {
+mongoose.connect(process.env.ATLAS_URI);
+
+
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running on port: ${process.env.PORT}`);
+});
+
+const db = mongoose.connection;
+db.once('open', () => {
   console.log("MongoDB database connection established successfully");
 });
 
+const postsRouter = require('./routes/route')
+app.use('/posts', postsRouter)
 
-app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
-});
+

@@ -1,5 +1,5 @@
 import React from 'react'
-import WebMatesLogo1 from './WebMatesLogo1.jpg';
+import logo from './logo.png';
 import WebMatesLogoName1 from './WebMatesLogoName1.png';
 
 
@@ -9,7 +9,7 @@ function Header() {
     <div className="app_header">
       <img
         className="app_logo"
-        src={WebMatesLogo1}
+        src={logo}
         alt=""
       />
       <img
